@@ -716,10 +716,9 @@ footer span { font-size: 12px; color: rgba(255,255,255,0.35); }
       </div>
     </div>
 
-    <button class="slack-btn" id="slack-btn" onclick="notifySlack()">
-      <span>💬</span> Enviar avance a Cyn por WhatsApp
-    </button>
-    <div id="slack-status" class="slack-status"></div>
+<button class="slack-btn" id="whatsapp-btn" onclick="enviarAvanceWhatsApp()" style="background: #25D366; color: white;">
+  Generar mensaje de avance para Cyn
+</button>
   </div>
 </div>
 </div>
@@ -728,42 +727,41 @@ footer span { font-size: 12px; color: rgba(255,255,255,0.35); }
 <div id="sec-recursos" class="section">
 <div class="section-inner">
   <div class="slabel">Lecturas & recursos — somos nerds y nos encanta 🤓</div>
+
   <div class="res-grid">
     <div class="res-group">
       <div class="res-group-title">🌀 Complejidad</div>
       <div class="res-item"><div class="res-icon">📄</div><div class="res-info"><div class="res-title"><a href="https://hbr.org/2007/11/a-leaders-framework-for-decision-making" target="_blank">A Leader's Framework for Decision Making</a></div><div class="res-meta">Snowden & Boone · Lectura Día 1</div></div><div class="res-type">Paper</div></div>
-      <div class="res-item"><div class="res-icon">📗</div><div class="res-info"><div class="res-title">Team of Teams</div><div class="res-meta">McChrystal · Libro</div></div><div class="res-type">Libro</div></div>
-      <div class="res-item"><div class="res-icon">📄</div><div class="res-info"><div class="res-title"><a href="https://drive.google.com/drive/folders/1P4tPdQmQMz7-YYwCtLcOBm3exQjGdFhr" target="_blank">An Emerging Cultural Change to Manage Organisational Complexity</a></div><div class="res-meta">Garcia, Diegoli & Auerbach · adjunto en Drive</div></div><div class="res-type">Paper</div></div>
-      <div class="res-item"><div class="res-icon">📗</div><div class="res-info"><div class="res-title">Extreme Ownership</div><div class="res-meta">Willink & Babin · Libro</div></div><div class="res-type">Libro</div></div>
-      <div class="res-item"><div class="res-icon">📄</div><div class="res-info"><div class="res-title"><a href="https://drive.google.com/drive/folders/1P4tPdQmQMz7-YYwCtLcOBm3exQjGdFhr" target="_blank">What is a Complex System?</a></div><div class="res-meta">Lectura Día 3 · adjunto en Drive</div></div><div class="res-type">Paper</div></div>
+      <div class="res-item"><div class="res-icon">📖</div><div class="res-info"><div class="res-title"><a href="https://drive.google.com/file/d/19U1hZznaFg86PknHnYoOHi-thjEsEISU/view?usp=drive_link" target="_blank">Team of Teams</a></div><div class="res-meta">McChrystal · Libro</div></div><div class="res-type">Libro</div></div>
+      <div class="res-item"><div class="res-icon">📄</div><div class="res-info"><div class="res-title"><a href="https://drive.google.com/file/d/18ipTUpzPQALabG9Cm3De9Nb5ruRW_zOl/view?usp=drive_link" target="_blank">An Emerging Cultural Change to Manage Organisational Complexity</a></div><div class="res-meta">Garcia, Diegoli & Auerbach · adjunto en Drive</div></div><div class="res-type">Paper</div></div>
+      <div class="res-item"><div class="res-icon">📖</div><div class="res-info"><div class="res-title"><a href="https://drive.google.com/file/d/1C_Cyz9X8XPk_gE2LvTZwCw6DTNDPqWzF/view?usp=drive_link" target="_blank">Extreme Ownership</a></div><div class="res-meta">Willink & Babin · Libro</div></div><div class="res-type">Libro</div></div>
+      <div class="res-item"><div class="res-icon">📄</div><div class="res-info"><div class="res-title"><a href="https://drive.google.com/file/d/1EfPadyZHuaPZZjhkE2Yd2eQp_avzRRA1/view?usp=drive_link" target="_blank">What is a Complex System?</a></div><div class="res-meta">Lectura Día 3 · adjunto en Drive</div></div><div class="res-type">Paper</div></div>
     </div>
     <div class="res-group">
       <div class="res-group-title">🌱 Consciencia / Humano / Entorno</div>
       <div class="res-item"><div class="res-icon">📄</div><div class="res-info"><div class="res-title"><a href="https://drive.google.com/drive/folders/1P4tPdQmQMz7-YYwCtLcOBm3exQjGdFhr" target="_blank">Organisational Values as "Attractors of Chaos"</a></div><div class="res-meta">Garcia, Diegoli & Auerbach · Lectura Día 2</div></div><div class="res-type">Paper</div></div>
-      <div class="res-item"><div class="res-icon">📗</div><div class="res-info"><div class="res-title">Capitalismo Consciente</div><div class="res-meta">Mackey & Sisodia · Libro</div></div><div class="res-type">Libro</div></div>
-      <div class="res-item"><div class="res-icon">📗</div><div class="res-info"><div class="res-title">Reinventing Organizations</div><div class="res-meta">Laloux · la versión gráfica es suficiente</div></div><div class="res-type">Libro</div></div>
+      <div class="res-item"><div class="res-icon">📖</div><div class="res-info"><div class="res-title">Capitalismo Consciente</div><div class="res-meta">Mackey & Sisodia · Libro</div></div><div class="res-type">Libro</div></div>
+      <div class="res-item"><div class="res-icon">📖</div><div class="res-info"><div class="res-title">Reinventing Organizations</div><div class="res-meta">Laloux · la versión gráfica es suficiente</div></div><div class="res-type">Libro</div></div>
       <div class="res-item"><div class="res-icon">📄</div><div class="res-info"><div class="res-title"><a href="https://drive.google.com/drive/folders/1P4tPdQmQMz7-YYwCtLcOBm3exQjGdFhr" target="_blank">Quantum management: the practices and science of flourishing enterprise</a></div><div class="res-meta">Laszlo · adjunto en Drive</div></div><div class="res-type">Paper</div></div>
     </div>
     <div class="res-group">
       <div class="res-group-title">🚀 Escalabilidad / Exponencial / Global</div>
-      <div class="res-item"><div class="res-icon">📗</div><div class="res-info"><div class="res-title">Exponential Organizations</div><div class="res-meta">Ismail · Libro</div></div><div class="res-type">Libro</div></div>
-      <div class="res-item"><div class="res-icon">📗</div><div class="res-info"><div class="res-title">Platform Revolution</div><div class="res-meta">Parker, Van Alstyne & Choudary · Libro</div></div><div class="res-type">Libro</div></div>
-      <div class="res-item"><div class="res-icon">📄</div><div class="res-info"><div class="res-title"><a href="https://drive.google.com/drive/folders/1P4tPdQmQMz7-YYwCtLcOBm3exQjGdFhr" target="_blank">Ignorance Management</a></div><div class="res-meta">Israilidis, Lock & Cooke · Lectura Día 4</div></div><div class="res-type">Paper</div></div>
-      <div class="res-item"><div class="res-icon">📄</div><div class="res-info"><div class="res-title"><a href="https://drive.google.com/drive/folders/1P4tPdQmQMz7-YYwCtLcOBm3exQjGdFhr" target="_blank">Digital entrepreneurship ecosystem</a></div><div class="res-meta">Elia, Margherita, Passiante · adjunto</div></div><div class="res-type">Paper</div></div>
+      <div class="res-item"><div class="res-icon">📖</div><div class="res-info"><div class="res-title"><a href="https://drive.google.com/file/d/1l_Z_11NBIXIrA1lvbZGjZGptd8xmA9RB/view?usp=drive_link" target="_blank">Exponential Organizations</a></div><div class="res-meta">Ismail · Libro</div></div><div class="res-type">Libro</div></div>
+      <div class="res-item"><div class="res-icon">📖</div><div class="res-info"><div class="res-title"><a href="https://drive.google.com/file/d/1qIpyQAfFXxU1Rfzr9J8Ll3SOtdxHGe1u/view?usp=drive_link" target="_blank">Platform Revolution</a></div><div class="res-meta">Parker, Van Alstyne & Choudary · Libro</div></div><div class="res-type">Libro</div></div>
+      <div class="res-item"><div class="res-icon">📄</div><div class="res-info"><div class="res-title"><a href="https://drive.google.com/file/d/1U-lf9MNfTaol3tyVT1GpVvO9q-ZpWPAZ/view?usp=drive_link" target="_blank">Ignorance Management</a></div><div class="res-meta">Israilidis, Lock & Cooke · Lectura Día 4</div></div><div class="res-type">Paper</div></div>
+      <div class="res-item"><div class="res-icon">📄</div><div class="res-info"><div class="res-title"><a href="https://drive.google.com/file/d/1-S8mSAVzIFB_IRD50Kd88MdxFUvVbr7a/view?usp=drive_link" target="_blank">Digital entrepreneurship ecosystem</a></div><div class="res-meta">Elia, Margherita, Passiante · adjunto</div></div><div class="res-type">Paper</div></div>
     </div>
     <div class="res-group">
       <div class="res-group-title">⚡ Disciplinares & Recomendados</div>
-      <div class="res-item"><div class="res-icon">🔗</div><div class="res-info"><div class="res-title"><a href="https://entrepreneurshandbook.co/how-to-get-more-done-in-3-hours-than-most-do-in-a-week-c5bcdcff801e" target="_blank">How To Get More Done In 3 Hours Than Most Do In A Week</a></div><div class="res-meta">Entrepreneurs Handbook · Lectura Día 5</div></div><div class="res-type">Web</div></div>
-      <div class="res-item"><div class="res-icon">📄</div><div class="res-info"><div class="res-title"><a href="https://drive.google.com/drive/folders/1P4tPdQmQMz7-YYwCtLcOBm3exQjGdFhr" target="_blank">Researching Entrepreneurship</a></div><div class="res-meta">Davidsson 2nd Edition · adjunto en Drive</div></div><div class="res-type">Libro</div></div>
-      <div class="res-item"><div class="res-icon">🔗</div><div class="res-info"><div class="res-title"><a href="http://playbook.samaltman.com/" target="_blank">Startup Playbook</a></div><div class="res-meta">Sam Altman · recomendado</div></div><div class="res-type">Web</div></div>
-      <div class="res-item"><div class="res-icon">🎓</div><div class="res-info"><div class="res-title"><a href="https://startupclass.co/" target="_blank">How to Start a Startup</a></div><div class="res-meta">Y Combinator · curso recomendado</div></div><div class="res-type">Curso</div></div>
-      <div class="res-item"><div class="res-icon">📁</div><div class="res-info"><div class="res-title"><a href="https://drive.google.com/drive/folders/1P4tPdQmQMz7-YYwCtLcOBm3exQjGdFhr" target="_blank">📁 Carpeta completa en Drive</a></div><div class="res-meta">Todos los PDFs adjuntos + recursos gráficos</div></div><div class="res-type">Drive</div></div>
+      <div class="res-item"><div class="res-icon">💻</div><div class="res-info"><div class="res-title"><a href="https://www.anthonyjyeung.com/productivity/" target="_blank">How To Get More Done In 3 Hours Than Most Do In A Week</a></div><div class="res-meta">Entrepreneurs Handbook · Lectura Día 5</div></div><div class="res-type">Web</div></div>
+      <div class="res-item"><div class="res-icon">📄</div><div class="res-info"><div class="res-title"><a href="https://drive.google.com/file/d/1xhcMwKMHq7Ythuj2shDx1tcydGCwRgrM/view?usp=drive_link" target="_blank">Researching Entrepreneurship</a></div><div class="res-meta">Davidsson 2nd Edition · adjunto en Drive</div></div><div class="res-type">Libro</div></div>
+      <div class="res-item"><div class="res-icon">💻</div><div class="res-info"><div class="res-title"><a href="https://playbook.samaltman.com/" target="_blank">Startup Playbook</a></div><div class="res-meta">Sam Altman · recomendado</div></div><div class="res-type">Web</div></div>
+      <div class="res-item"><div class="res-icon">🎓</div><div class="res-info"><div class="res-title"><a href="https://www.ycombinator.com/library/carousel/How%20to%20Start%20a%20Startup%20-%20A%20course%20Y%20Combinator%20taught%20at%20Stanford" target="_blank">How to Start a Startup</a></div><div class="res-meta">Y Combinator · curso recomendado</div></div><div class="res-type">Curso</div></div>
+      <div class="res-item"><div class="res-icon">📁</div><div class="res-info"><div class="res-title"><a href="https://drive.google.com/drive/folders/1P4tPdQmQMz7-YYwCtLcOBm3exQjGdFhr?usp=drive_link" target="_blank">📁 Carpeta completa en Drive</a></div><div class="res-meta">Todos los PDFs adjuntos + recursos gráficos</div></div><div class="res-type">Drive</div></div>
     </div>
   </div>
-</div>
-</div>
 
-<!-- ── MENTOR ── -->
+  <!-- ── MENTOR ── -->
 <div id="sec-mentor" class="section">
 <div class="section-inner">
   <div class="slabel">Tu mentora & los valores del equipo</div>
@@ -844,74 +842,33 @@ function updateRing() {
   if (ro) ro.textContent = `de ${total} tareas`;
 }
 
-async function notifySlack() {
-  const btn = document.getElementById('slack-btn');
-  const status = document.getElementById('slack-status');
-  const doneItems = Object.entries(checked).filter(([k,v]) => v).map(([k]) => k);
+function enviarAvanceWhatsApp() {
+  // Número de Cyn con lada de México (+52)
+  const telefono = "526141704597"; 
   
-  if (doneItems.length === 0) {
-    showToast('⚠️', 'Marca al menos una tarea antes de notificar');
+  // Recolectar tareas completadas
+  const tareasCompletadas = [];
+  document.querySelectorAll('.ck-item').forEach(item => {
+    const checkbox = item.querySelector('.ck-box');
+    const textoTarea = item.querySelector('.ck-text');
+    
+    if (checkbox && checkbox.classList.contains('done') && textoTarea) {
+      tareasCompletadas.push("✓ " + textoTarea.innerText.trim());
+    }
+  });
+
+  // Validar si Andrea seleccionó algo
+  if (tareasCompletadas.length === 0) {
+    alert("¡Hola Andrea! Selecciona primero las tareas que has completado hoy para poder generar tu reporte.");
     return;
   }
 
-  btn.textContent = '💬 Generando mensaje...';
-  btn.disabled = true;
-  status.textContent = '';
+  // Estructura del mensaje de texto
+  let mensaje = "*¡Hola Cyn!* 👋\n\nAquí te comparto mi reporte de avance en el Onboarding de Emprendimiento Tec del día de hoy:\n\n";
+  mensaje += tareasCompletadas.join("\n");
+  mensaje += "\n\n¡Seguimos avanzando! 🚀";
 
-  try {
-    const res = await fetch('https://api.anthropic.com/v1/messages', {
-      method: 'POST',
-      headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify({
-        model: 'claude-sonnet-4-20250514',
-        max_tokens: 500,
-        messages: [{ role: 'user', content: `Eres el asistente de onboarding de Andrea Moreno en Emprendimiento Tec GDL (IEEGL).
-
-Andrea marcó estas tareas como completadas en su checklist:
-${doneItems.map(i => '✅ ' + i).join('\n')}
-
-Genera un mensaje corto para Slack (máx 3 párrafos) de parte de Andrea hacia Cyn, en primera persona, tono directo y celebrador del equipo. Incluye el rayo ⚡ del IEEGL al final.` }]
-      })
-    });
-    
-    const data = await res.json();
-    const msg = data.content?.[0]?.text || 'Actualización de onboarding lista.';
-    const waLink = 'https://wa.me/526141704597?text=' + encodeURIComponent(msg);
-    status.innerHTML = '<div class="msg-box">'
-      + '<span class="msg-box-label">💬 Mensaje listo para WhatsApp</span>'
-      + '<div id="msg-content" style="font-size:12px;line-height:1.6;color:var(--texto);margin-bottom:12px;">' + msg.replace(/\n/g,'<br>') + '</div>'
-      + '<a href="' + waLink + '" target="_blank" style="display:inline-flex;align-items:center;gap:8px;background:#25D366;color:white;border-radius:10px;padding:10px 18px;font-family:var(--font-head);font-size:13px;font-weight:700;text-decoration:none;">💬 Abrir WhatsApp y enviar</a>'
-      + '<button class="copy-btn" style="margin-left:8px" onclick="copyMsg()">📋 Copiar texto</button>'
-      + '</div>';
-    showToast('💬', '¡Listo! Dale clic para abrir WhatsApp');
-  } catch(e) {
-    status.textContent = 'Algo salió mal. Intenta de nuevo.';
-    showToast('⚠️', 'Error al generar el mensaje');
-  }
-
-  btn.innerHTML = '<span>💬</span> Enviar avance a Cyn por WhatsApp';
-  btn.disabled = false;
+  // Abrir WhatsApp Web o App
+  const urlParams = "https://api.whatsapp.com/send?phone=" + telefono + "&text=" + encodeURIComponent(mensaje);
+  window.open(urlParams, '_blank');
 }
-
-function copyMsg() {
-  const el = document.getElementById('msg-content');
-  const text = el ? el.innerText : '';
-  navigator.clipboard.writeText(text).then(() => {
-    showToast('✅', '¡Copiado! Pégalo en Slack');
-    const btn = document.querySelector('.copy-btn');
-    if (btn) { btn.textContent = '✅ Copiado!'; setTimeout(() => btn.textContent = '📋 Copiar', 2000); }
-  });
-}
-
-function showToast(icon, msg) {
-  const t = document.getElementById('toast');
-  document.getElementById('toast-icon').textContent = icon;
-  document.getElementById('toast-msg').textContent = msg;
-  t.classList.add('show');
-  setTimeout(() => t.classList.remove('show'), 3500);
-}
-
-window.addEventListener('load', updateRing);
-</script>
-</body>
-</html>
